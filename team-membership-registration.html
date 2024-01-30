@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Membership Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      /* Center align content */
+    }
+
+    .logo {
+      max-width: 100px;
+      margin: 10px auto;
+      /* Center align the logo */
+      border-radius: 50%;
+    }
+
+    .innovation-img {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #007bff;
+      /* Blue color for heading */
+      margin-top: 30px;
+    }
+
+    .welcome-text {
+      margin-top: 20px;
+      color: #555;
+      /* Darker text color */
+      margin-bottom: 30px;
+    }
+
+    .form-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column; /* Add this line */
+}
+
+
+    .form-element {
+      margin: 5px;
+      flex-basis: 45%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .form-element:focus {
+      border-color: #007bff;
+    }
+
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .button-element {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button-element:hover {
+      background-color: #0056b3;
+    }
+
+    /* New responsive styles */
+
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      .logo {
+        max-width: 80px;
+      }
+
+      .form-element {
+        flex-basis: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="https://th.bing.com/th/id/R.4d271521b822e73c1ad4efffbc6379a8?rik=7KOoQDvPcASf%2fw&riu=http%3a%2f%2fwww.ethiovisit.com%2fdirectory%2fuploads%2fimages%2feducation%2funiversity%2f1045%2fdefault-Wachamo-University.jpg&ehk=kN9qS9EiwxLa2xjxRSDUg3IV53M1kaqZ%2bNJaa2q8ZWo%3d&risl=&pid=ImgRaw&r=0" alt="Wachemo University Logo" class="logo">
+    <img src="https://th.bing.com/th/id/R.6cc09209706ee891ffddb57d4c5eb469?rik=GBqDnJXwH7Q6Zg&pid=ImgRaw&r=0" alt="Innovation Image" class="innovation-img">
+    <h2>Welcome to the Wachemo University Innovation And Entrepreneurship Development Club!</h2>
+    <div class="welcome-text">Fill out the form below to register:</div>
+    <form class="form-container" id="registrationForm">
+      <input type="text" class="form-element" placeholder="First Name" id="firstName">
+      <input type="text" class="form-element" placeholder="Last Name" id="lastName">
+      <input type="email" class="form-element" placeholder="Email" id="email">
+      <input type="text" class="form-element" placeholder="Department" id="department">
+      <input type="text" class="form-element" placeholder="Phone number" id="phone">
+      <div class="button-container">
+        <button type="button" class="button-element" onclick="register()">Register</button>
+        <button type="button" class="button-element" onclick="clearForm()">Clear</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function register() {
+      // Get form data
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var email = document.getElementById("email").value;
+      var department = document.getElementById("department").value;
+      var phone = document.getElementById("phone").value;
+
+      // Construct email body
+      var emailBody = "First Name: " + firstName + "\n" +
+        "Last Name: " + lastName + "\n" +
+        "Email: " + email + "\n" +
+        "Department: " + department + "\n" +
+        "Phone Number: " + phone;
+
+      // Send email
+      var mailtoLink = "mailto:musie480@gmail.com" +
+        "?subject=Team Membership Registration" +
+        "&body=" + encodeURIComponent(emailBody);
+
+      // Open default email client
+      window.location.href = mailtoLink;
+    }
+
+    function clearForm() {
+      // Clear form fields
+      document.getElementById("registrationForm").reset();
+    }
+  </script>
+</body>
+
+</html>
